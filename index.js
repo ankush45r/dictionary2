@@ -78,7 +78,7 @@ app.use(express.static('views'));
 // })
 
 app.get('/signup',(req,res)=>{
-    res.render('/views/Signup/index.ejs');
+    res.render('./views/Signup/index.ejs');
 })
 
 // app.get('/login',(req,res)=>{
