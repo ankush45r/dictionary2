@@ -86,7 +86,7 @@ app.get('/signup',(req,res)=>{
 // })
 
 app.get('/login',(req,res)=>{
-    res.render('views/Login/index.ejs');
+    res.render('Login/index.ejs');
 })
 
 app.post('/dictionary', async (req,res)=>{
