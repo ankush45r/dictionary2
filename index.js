@@ -82,14 +82,11 @@ app.get('/signup',(req,res)=>{
 })
 
 // app.get('/login',(req,res)=>{
-//     res.render('views//Main/index.ejs');
+//     res.render('views/Main/index.ejs');
 // })
 
-app.get('/login',async (req,res)=>{
-    const collection = await dbConnect('DictData','userData');
-        let data = await collection.findOne({phone : req.body.phone});
-        data.info = '';
-    res.render('views/Login/index.ejs',{data});
+app.get('/login',(req,res)=>{
+    res.render('views/Login/index.ejs');
 })
 
 app.post('/dictionary', async (req,res)=>{
@@ -114,7 +111,7 @@ app.post('/dictionary', async (req,res)=>{
     }
     catch(e){
         console.log(e);
-        res.send(`<h1 style="color:red;"> Id or password you entered are incorrect, Go back and try again!!!!`);
+//         res.send(`<h1 style="color:red;"> Id or password you entered are incorrect, Go back and try again!!!!`);
     }
 })
 
@@ -135,7 +132,7 @@ app.post('/signup_', async (req,res)=>{
         const collection = await dbConnect('DictData','userData');
         // const data = await collection.findOne({phone : phone});
         // res.render('./Login/index.ejs',{data});
-        if(what == 0){
+        if(what === 0){
             res.send(`<h1 style="color:red;">Data you used for signup is already in use plz use different <br><br> go back and use another</h1>`);
         }
         else{
